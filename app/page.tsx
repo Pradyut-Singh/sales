@@ -1,103 +1,126 @@
-import Image from "next/image";
+import Link from "next/link";
+import { BarChart3, TrendingUp, DollarSign, Sparkles, ArrowRight, Zap, Shield, Globe } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Enhanced Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="w-full h-full" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+      </div>
+      
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full opacity-20 animate-float"></div>
+      <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-600 rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-r from-accent-400 to-accent-600 rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full opacity-15 animate-float" style={{ animationDelay: '3s' }}></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="relative container mx-auto px-4 py-20">
+        <div className="text-center mb-20 animate-fade-in-up">
+          <div className="flex justify-center mb-10">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-600 rounded-4xl blur-xl opacity-30 animate-glow"></div>
+              <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 p-8 rounded-4xl shadow-2xl">
+                <BarChart3 className="w-20 h-20 text-white" />
+              </div>
+            </div>
+          </div>
+          
+          <div className="mb-10">
+            <h1 className="text-6xl lg:text-7xl font-bold gradient-text mb-8">
+              Sales Dashboard
+            </h1>
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <Sparkles className="w-6 h-6 text-primary-500" />
+              <span className="text-primary-600 font-semibold text-lg">Modern Analytics Platform</span>
+              <Sparkles className="w-6 h-6 text-primary-500" />
+            </div>
+          </div>
+          
+          <p className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Transform your sales data into actionable insights with our comprehensive analytics platform. 
+            Built with cutting-edge technologies for the modern business.
+          </p>
+          
+          <Link 
+            href="/dashboard"
+            className="group inline-flex items-center gap-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-12 py-6 rounded-3xl font-bold text-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-2xl hover:shadow-glow-lg transform hover:scale-105 active:scale-95"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <TrendingUp className="w-8 h-8 group-hover:rotate-12 transition-transform duration-300" />
+            Explore Dashboard
+            <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24">
+          {[
+            {
+              icon: <DollarSign className="w-10 h-10" />,
+              title: "Advanced Analytics",
+              description: "Deep dive into sales performance with multi-dimensional analysis, trend identification, and predictive insights.",
+              gradient: "from-accent-500 to-accent-600",
+              bgGradient: "from-accent-50 to-accent-100"
+            },
+            {
+              icon: <BarChart3 className="w-10 h-10" />,
+              title: "Interactive Visualizations",
+              description: "Dynamic charts that respond to your needs. Switch between multiple chart types with real-time filtering capabilities.",
+              gradient: "from-secondary-500 to-secondary-600",
+              bgGradient: "from-secondary-50 to-secondary-100"
+            },
+            {
+              icon: <TrendingUp className="w-10 h-10" />,
+              title: "Real-time Intelligence",
+              description: "Get instant insights with live data processing, automated trend detection, and intelligent recommendations.",
+              gradient: "from-primary-500 to-primary-600",
+              bgGradient: "from-primary-50 to-primary-100"
+            }
+          ].map((feature, index) => (
+            <div 
+              key={index}
+              className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-soft hover:shadow-medium transition-all duration-300 border border-white/20 hover:scale-105 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className={`bg-gradient-to-r ${feature.bgGradient} p-5 rounded-3xl w-fit mb-8 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
+                  {feature.icon}
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-primary-700 transition-colors">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center animate-fade-in-up">
+          <h2 className="text-4xl font-bold gradient-text mb-12">
+            Powered by Modern Technology Stack
+          </h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              { name: "Next.js 15", color: "from-gray-800 to-gray-900", icon: <Zap className="w-5 h-5" /> },
+              { name: "TypeScript", color: "from-primary-500 to-primary-600", icon: <Shield className="w-5 h-5" /> },
+              { name: "Tailwind CSS", color: "from-cyan-500 to-cyan-600", icon: <Globe className="w-5 h-5" /> },
+              { name: "Recharts", color: "from-accent-500 to-accent-600", icon: <BarChart3 className="w-5 h-5" /> },
+              { name: "Lucide Icons", color: "from-secondary-500 to-secondary-600", icon: <Sparkles className="w-5 h-5" /> }
+            ].map((tech, index) => (
+              <div
+                key={index}
+                className={`bg-gradient-to-r ${tech.color} text-white px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold hover:scale-105 cursor-default flex items-center gap-3`}
+              >
+                {tech.icon}
+                {tech.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
