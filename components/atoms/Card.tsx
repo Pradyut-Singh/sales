@@ -6,6 +6,12 @@ interface CardProps {
   padding?: 'sm' | 'md' | 'lg' | 'xl';
   variant?: 'default' | 'gradient' | 'glass' | 'elevated' | 'bordered' | 'gradient-border';
   hover?: boolean;
+  // Accessibility props
+  role?: string;
+  tabIndex?: number;
+  'aria-label'?: string;
+  onClick?: () => void;
+  onKeyDown?: (event: React.KeyboardEvent) => void;
 }
 
 export default function Card({ 
@@ -13,7 +19,12 @@ export default function Card({
   className = '', 
   padding = 'md',
   variant = 'default',
-  hover = true
+  hover = true,
+  role,
+  tabIndex,
+  'aria-label': ariaLabel,
+  onClick,
+  onKeyDown
 }: CardProps) {
   const paddingClasses = {
     sm: 'p-4',
@@ -34,7 +45,14 @@ export default function Card({
   const hoverClasses = hover ? 'transition-all duration-300 hover:shadow-medium hover:scale-[1.02] active:scale-[0.98]' : '';
   
   return (
-    <div className={`rounded-2xl ${variantClasses[variant]} ${paddingClasses[padding]} ${hoverClasses} ${className}`}>
+    <div 
+      className={`rounded-2xl ${variantClasses[variant]} ${paddingClasses[padding]} ${hoverClasses} ${className}`}
+      role={role}
+      tabIndex={tabIndex}
+      aria-label={ariaLabel}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+    >
       {children}
     </div>
   );
