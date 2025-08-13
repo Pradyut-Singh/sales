@@ -17,15 +17,15 @@ A comprehensive sales analytics dashboard built with Next.js 15, TypeScript, and
 ## 📸 Screenshots
 
 ### Desktop Dashboard
-![Desktop Dashboard](https://drive.google.com/file/d/1M19UZyjCvNF0p7sABwMTFmFvNhhzv9ZI/view?usp=sharing)
+![Desktop Dashboard](https://ik.imagekit.io/qjlaoqi88/Screenshot%202025-08-13%20164153.png?updatedAt=1755084014748)
 *Main dashboard view with interactive charts and controls*
 
 ### Mobile Responsive
-![Mobile Dashboard](https://drive.google.com/file/d/1Jj2sdHfNSN1neZx3EAlX5AK_QJpZZfLU/view?usp=sharing)
+![Mobile Dashboard](https://ik.imagekit.io/qjlaoqi88/Screenshot%202025-08-13%20164309.png?updatedAt=1755084014406)
 *Fully responsive design optimized for mobile devices*
 
 ### Chart Types
-![Chart Types](https://drive.google.com/file/d/1zKx-P5kQnANxcc8kuwmS_Fw6I0JEGO8k/view?usp=sharing)
+![Chart Types](https://ik.imagekit.io/qjlaoqi88/Screenshot%202025-08-13%20164215.png?updatedAt=1755084014603)
 *Multiple chart types: Line, Bar, and Pie charts*
 
 ## 🚀 Features
@@ -272,7 +272,7 @@ The application can be deployed to any platform that supports Next.js:
 ## 📞 Support
 
 If you have any questions or need support, please reach out to:
-- Email: jbirch@glynac.ai
+- Email: pradyutsingh05@gmail.com
 - GitHub Issues: [Create an issue](https://github.com/Pradyut-Singh/sales)
 
 ---
