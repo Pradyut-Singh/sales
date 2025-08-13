@@ -22,11 +22,11 @@ export default function StatsCard({
   const getTrendIcon = () => {
     switch (changeType) {
       case 'increase':
-        return <TrendingUp className="w-4 h-4 text-accent-500" />;
+        return <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-accent-500" />;
       case 'decrease':
-        return <TrendingDown className="w-4 h-4 text-red-500" />;
+        return <TrendingDown className="w-3 h-3 sm:w-4 sm:h-4 text-red-500" />;
       default:
-        return <Minus className="w-4 h-4 text-gray-400" />;
+        return <Minus className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />;
     }
   };
 
@@ -64,19 +64,25 @@ export default function StatsCard({
   };
 
   return (
-    <Card variant={getCardVariant()} className="group cursor-pointer animate-fade-in-up">
+    <Card 
+      variant={getCardVariant()} 
+      className="group cursor-pointer animate-fade-in-up"
+      role="button"
+      tabIndex={0}
+      aria-label={`${title}: ${value}${change !== undefined ? `, ${changeType} of ${Math.abs(change)}%` : ''}`}
+    >
       <div className="flex items-start justify-between">
-        <div className="flex-1">
-          <p className="text-sm font-medium text-gray-500 mb-2 group-hover:text-gray-700 transition-colors">
+        <div className="flex-1 min-w-0">
+          <p className="text-xs sm:text-sm font-medium text-gray-500 mb-1 sm:mb-2 group-hover:text-gray-700 transition-colors truncate">
             {title}
           </p>
-          <p className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors">
+          <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-primary-700 transition-colors break-words">
             {value}
           </p>
           {change !== undefined && (
-            <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${getTrendColor()} transition-all duration-200 group-hover:scale-105`}>
+            <div className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold border ${getTrendColor()} transition-all duration-200 group-hover:scale-105`}>
               {getTrendIcon()}
-              <span>
+              <span className="whitespace-nowrap">
                 {changeType === 'increase' ? '+' : changeType === 'decrease' ? '-' : ''}
                 {Math.abs(change)}%
               </span>
@@ -84,8 +90,8 @@ export default function StatsCard({
           )}
         </div>
         {icon && (
-          <div className={`p-4 rounded-2xl ${getIconBg()} group-hover:scale-110 transition-all duration-300 group-hover:shadow-xl`}>
-            <div className="w-6 h-6">
+          <div className={`p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl ${getIconBg()} group-hover:scale-110 transition-all duration-300 group-hover:shadow-xl flex-shrink-0 ml-2 sm:ml-3`}>
+            <div className="w-4 h-4 sm:w-6 sm:h-6">
               {icon}
             </div>
           </div>

@@ -24,21 +24,22 @@ export default function DashboardTemplate({
         }}></div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full opacity-20 animate-float"></div>
-      <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-600 rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-r from-accent-400 to-accent-600 rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full opacity-15 animate-float" style={{ animationDelay: '3s' }}></div>
+      {/* Floating Elements - Hidden on mobile for better performance */}
+      <div className="hidden md:block absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full opacity-20 animate-float"></div>
+      <div className="hidden md:block absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-600 rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="hidden md:block absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-r from-accent-400 to-accent-600 rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="hidden md:block absolute top-1/2 right-1/4 w-8 h-8 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full opacity-15 animate-float" style={{ animationDelay: '3s' }}></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Header */}
-        <div className="mb-12 animate-fade-in-up">
+        <div className="mb-8 sm:mb-12 animate-fade-in-up">
           {header}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* Mobile-first responsive layout */}
+        <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {/* Main Content */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="xl:col-span-3 space-y-4 sm:space-y-6 lg:space-y-8">
             {/* Stats Section */}
             <div className="animate-fade-in-up">
               {stats}
@@ -55,13 +56,19 @@ export default function DashboardTemplate({
             </div>
           </div>
 
-          {/* Sidebar */}
+          {/* Sidebar - Responsive behavior */}
           {sidebar && (
-            <div className="lg:col-span-1 animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
-              {sidebar}
+            <div className="xl:col-span-1 animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
+              {/* Mobile: Full width, Desktop: Sidebar */}
+              <div className="xl:block">
+                {sidebar}
+              </div>
             </div>
           )}
         </div>
+
+        {/* Mobile-specific spacing */}
+        <div className="h-8 sm:hidden"></div>
       </div>
     </div>
   );

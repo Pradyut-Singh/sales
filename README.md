@@ -6,6 +6,28 @@ A comprehensive sales analytics dashboard built with Next.js 15, TypeScript, and
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=for-the-badge&logo=tailwind-css)
 
+## 🌐 Live Demo
+
+**Live Demo URL**: [https://sales-neon.vercel.app/](https://sales-neon.vercel.app/)
+
+## 📁 GitHub Repository
+
+**Repository Link**: [https://github.com/Pradyut-Singh/sales](https://github.com/Pradyut-Singh/sales)
+
+## 📸 Screenshots
+
+### Desktop Dashboard
+![Desktop Dashboard](https://drive.google.com/file/d/1M19UZyjCvNF0p7sABwMTFmFvNhhzv9ZI/view?usp=sharing)
+*Main dashboard view with interactive charts and controls*
+
+### Mobile Responsive
+![Mobile Dashboard](https://drive.google.com/file/d/1Jj2sdHfNSN1neZx3EAlX5AK_QJpZZfLU/view?usp=sharing)
+*Fully responsive design optimized for mobile devices*
+
+### Chart Types
+![Chart Types](https://drive.google.com/file/d/1zKx-P5kQnANxcc8kuwmS_Fw6I0JEGO8k/view?usp=sharing)
+*Multiple chart types: Line, Bar, and Pie charts*
+
 ## 🚀 Features
 
 - **Interactive Charts**: Switch between line, bar, and pie charts using Recharts
@@ -15,6 +37,8 @@ A comprehensive sales analytics dashboard built with Next.js 15, TypeScript, and
 - **Atomic Design**: Clean component architecture following atomic design principles
 - **Real-time Insights**: Year-over-year growth calculations and key metrics
 - **Modern UI**: Beautiful interface with Tailwind CSS and Lucide icons
+- **Accessibility**: WCAG 2.1 compliant with keyboard navigation and screen reader support
+- **Performance Optimized**: Fast loading with optimized bundles and lazy loading
 
 ## 🏗️ Architecture
 
@@ -24,6 +48,7 @@ This project follows atomic design principles:
 - `Button` - Reusable button component with variants
 - `Input` - Form input with validation states
 - `Card` - Container component for content sections
+- `Label` - Accessible label component
 
 ### Molecules (Component Combinations)
 - `ChartControls` - Chart type and filter controls
@@ -66,24 +91,74 @@ Data includes:
 
 ## 📦 Installation & Setup
 
+### Prerequisites
+- Node.js 18.0 or later
+- npm or yarn package manager
+
+### Local Development
+
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Pradyut-Singh/sales.git
    cd ad-next-sales
    ```
 
 2. **Install dependencies**
    ```bash
    npm install
+   # or
+   yarn install
    ```
 
 3. **Run the development server**
    ```bash
    npm run dev
+   # or
+   yarn dev
    ```
 
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Production Build
+
+1. **Build the application**
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+
+2. **Start production server**
+   ```bash
+   npm run start
+   # or
+   yarn start
+   ```
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. **Install Vercel CLI**
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Deploy**
+   ```bash
+   vercel
+   ```
+
+3. **Follow the prompts to connect your GitHub repository**
+
+### Deploy to Other Platforms
+
+The application can be deployed to any platform that supports Next.js:
+
+- **Netlify**: Connect your GitHub repository and set build command to `npm run build`
+- **Railway**: Connect your repository and it will auto-detect Next.js
+- **AWS Amplify**: Connect your repository and follow the Next.js deployment guide
 
 ## 🚀 Available Scripts
 
@@ -91,6 +166,7 @@ Data includes:
 - `npm run build` - Build the application for production
 - `npm run start` - Start the production server
 - `npm run lint` - Run ESLint for code quality
+- `npm run type-check` - Run TypeScript type checking
 
 ## 📁 Project Structure
 
@@ -105,7 +181,8 @@ Data includes:
 │   ├── atoms/               # Basic UI components
 │   │   ├── Button.tsx
 │   │   ├── Card.tsx
-│   │   └── Input.tsx
+│   │   ├── Input.tsx
+│   │   └── Label.tsx
 │   ├── molecules/           # Component combinations
 │   │   ├── ChartControls.tsx
 │   │   └── StatsCard.tsx
@@ -115,13 +192,22 @@ Data includes:
 │       └── DashboardTemplate.tsx
 ├── data/
 │   └── salesData.ts         # Mock sales data
-└── utils/                   # Utility functions
+├── utils/                   # Utility functions
+│   └── format.ts
+├── public/                  # Static assets
+├── package.json            # Dependencies and scripts
+├── next.config.ts          # Next.js configuration
+├── tailwind.config.js      # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── README.md               # Project documentation
 ```
 
 ## 🎨 Design System
 
 ### Color Palette
-- Primary: Blue (#3B82F6)
+- Primary: Blue (#0ea5e9)
+- Secondary: Purple (#d946ef)
+- Accent: Green (#22c55e)
 - Success: Green (#10B981)
 - Warning: Yellow (#F59E0B)
 - Error: Red (#EF4444)
@@ -147,6 +233,18 @@ Data includes:
 - **Customizable**: Easy to extend with new chart types
 - **Accessible**: Proper color contrast and labels
 
+### Responsive Design
+- **Mobile First**: Optimized for mobile devices
+- **Tablet Support**: Responsive grid layouts
+- **Desktop Enhancement**: Full feature set on larger screens
+- **Touch Friendly**: Optimized touch targets and interactions
+
+### Accessibility Features
+- **Keyboard Navigation**: Full keyboard accessibility
+- **Screen Reader Support**: Proper ARIA labels and descriptions
+- **Color Contrast**: WCAG 2.1 AA compliant color ratios
+- **Focus Management**: Clear focus indicators and logical tab order
+
 ## 🔮 Future Enhancements
 
 - **API Integration**: Connect to real sales data sources
@@ -155,6 +253,8 @@ Data includes:
 - **User Authentication**: Personal dashboards and saved views
 - **Real-time Updates**: WebSocket integration for live data
 - **Mobile App**: React Native version for mobile access
+- **Dark Mode**: Toggle between light and dark themes
+- **Internationalization**: Multi-language support
 
 ## 🤝 Contributing
 
@@ -164,13 +264,16 @@ Data includes:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
-Built with ❤️ using modern web technologies and best practices.
+**Pradyut** - Built with ❤️ using modern web technologies and best practices.
+
+## 📞 Support
+
+If you have any questions or need support, please reach out to:
+- Email: jbirch@glynac.ai
+- GitHub Issues: [Create an issue](https://github.com/Pradyut-Singh/sales)
 
 ---
 
